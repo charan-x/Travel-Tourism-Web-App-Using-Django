@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,700"/>
+  <link rel="stylesheet" href="{% static '/StyleSheets/signup.css' %}"/>
+  <!-- <script src="signup.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+</head>
+<body style="background-image: url('/static/Images/si1.jpg');  background-attachment: fixed; 
+background-size: 100%;">
+  <div class="body-div">
+    <div class="container">
+      <div id="signup_div" class="main-div">
+        <h3 style="align-self: flex-start; padding: 10px 0px;">SignUp</h3>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{form.username}}
+
+        {{form.email}}
+
+        {{form.password1}}
+
+        {{form.password2}}
+        <button type="submit" id="btn_signup">signup</button>
+      </form>
+      {{form.errors}}
+      <p style="padding: 10px;">Already have an account? <a href="{% url 'Login' %}" style="color: #4285f4;">Login</a></p>
+    </div>
+    <div>
+      <img height="300px" width="400px" src="{% static 'Images/stock.svg' %}" alt="">
+    </div>
+  </div>
+  </div>
+</body>
+  <script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Username';
+    form_fields[2].placeholder = 'Email';
+    form_fields[3].placeholder = 'Enter Password';
+    form_fields[4].placeholder = 'Re-Enter Password';
+    for(var field in form_fields) {
+      form_fields[field].className += ' form-control'
+    }
+  </script>
+</html>
+
+

@@ -1,0 +1,52 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<br><br>
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+    <a href="#">klu@example.com</a></p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+
+  </body>
+</html>
+
+{% endblock %}

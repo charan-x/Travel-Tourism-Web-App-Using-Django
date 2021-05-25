@@ -1,0 +1,36 @@
+/* Slideshow container */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');  
+*{
+  font-family: 'Nunito', sans-serif;
+ 
+}
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    
+   
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    
+  }
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }

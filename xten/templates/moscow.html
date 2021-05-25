@@ -1,0 +1,279 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+
+  <br><br>
+  <h1>Moscow</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/moscow.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/moscow.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/moscow.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About Moscow</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">Moscow (/ˈmɒskoʊ/, /ˈmɒskaʊ/;[10][11] Russian:
+    Москва, tr. Moskva, IPA: [mɐˈskva] (About this soundlisten)) is the capital and largest city of Russia. The city
+    stands on the Moskva River in Central Russia, with a population estimated at 12.4 million residents within the city
+    limits,[12] over 17 million residents in the urban area,[13] and over 20 million residents in the metropolitan
+    area.[14] The city covers an area of 2,511 square kilometres (970 sq mi), while the urban area covers 5,891 square
+    kilometres (2,275 sq mi),[13] and the metropolitan area covers over 26,000 square kilometres (10,000 sq mi).[14]
+    Moscow is among the world's largest cities, being the largest city entirely in Europe, the largest urban area in
+    Europe,[13] the largest metropolitan area in Europe,[14] and the largest city by land area on the European
+    continent.[15]
+
+    Originally established in 1147, Moscow grew to become a prosperous and powerful city that served as the capital of
+    the Grand Duchy that bears its namesake. When the Grand Duchy of Moscow evolved into the Tsardom of Russia, Moscow
+    still remained as the political and economic center for most of the Tsardom's history. When the Tsardom was reformed
+    into the Russian Empire, the capital was moved from Moscow to Saint Petersburg diminishing the influence of the
+    city. The capital was then moved back to Moscow following the October Revolution and the city was brought back as
+    the political centre of the Russian SFSR and then the Soviet Union. In the aftermath of the dissolution of the
+    Soviet Union, Moscow remained as the capital city of the contemporary and newly established Russian Federation.
+
+    As the northernmost and coldest megacity in the world, and with a history that dates over eight centuries, Moscow is
+    governed as a federal city that serves as the political, economic, cultural, and scientific centre of Russia and
+    Eastern Europe. As an alpha world city,[16] Moscow has one of the world's largest urban economies, and is one of the
+    most expensive cities in the world. The city is one of the fastest growing tourist destinations in the world,[17]
+    and is one of Europe's most visited cities. Moscow is home to the third-highest number of billionaires of any city
+    in the world,[18] and has the highest number of billionaires of any city in Europe. The Moscow International
+    Business Center is one of the largest financial centres in Europe and the world, and features some of Europe's
+    tallest skyscrapers. Muscovites enjoy public digital services more than anywhere else in Europe,[19] and the best
+    e-government services in the world.[20] Moscow was the host city of the 1980 Summer Olympics, and one of the host
+    cities of the 2018 FIFA World Cup.[21]</p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Kremlin and the Red Square</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Moscow and the Kremlin go hand in hand like Paris and the Eiffel Tower. This massive and picturesque complex now
+    serves as the headquarters of the Russian government. Yet, it has not lost any of its artistic beauty and charm
+    because of that. On its own, the Kremlin is a massive tourist attraction. But when you add the historic Red Square,
+    the iconic St. Basil’s Cathedral and the Kremlin’s own armory, you get an irresistible tourist attraction which has
+    something for everyone.
+
+    Of course, there are plenty of ways you can spend time around the Kremlin. These range from shopping at the GUM to
+    spending time in Zaryadye Park. So, this place becomes one of the best and most diverse Moscow tourist draws on
+    every tourist itinerary. This also means that the entire area around the Kremlin is always populated with countless
+    tourists. If you are travelling with a group, then this spot is particularly delightful and offers the best chances
+    for group selfies.
+  </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. The Moscow Subway</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    When most people picture the underground subway systems and their train stations, they imagine boring grey tile,
+    glass and metal. This would be true for most metro station systems around the world. However, the Moscow subway is a
+    delightful step away from the aesthetics of modern muted architecture. Wander into any Moscow subway and you are
+    likely to find yourself in an otherworldly place. The picturesque old-world feel and sensibilities of the Metro have
+    an identity of their own. They were the most expensive project undertaken by the Soviet Government and were
+    completed in 1935. Since then, they have been an architectural and aesthetical marvel.
+
+    The Moscow metro is arguably one of the most beautiful underground commuter’s networks in the world. The roofing is
+    inlaid with beautiful images from the nation’s past set against a magnificent faded gold wall color. This makes for
+    one of the most beatific scenes in all of Moscow and you can be forgiven for getting a little to snap-happy with the
+    selfies here.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. Peter the Great Statue</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    If Moscow has one iconic statue that towers in significance over others, then the Peter the Great Statue is it.
+    Symbolizing the monumental life and works of Peter the Great, this statue is as stately as it is imposing. It stands
+    taller than New York’s Statue of Liberty and has had Muscovites divided on its aesthetic beauty since it was first
+    erected. Despite the polar views or passerbys, art critics and politicians alike, the statue has been a major
+    tourist attraction.
+
+    Another great thing about the Peter the Great statue is that you can see it in many ways. While the statue is
+    visible from land, you can also see it from the water and the air. Each one of these views can provide a unique,
+    detailed and mesmerizing view of the statue. If you find yourself fascinated by the statue, then consider going for
+    a boat or air ride. You will understand why this statue is one of the biggest Moscow tourists attractions on
+    everyone’s list.
+  </p>
+
+
+
+  <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/moscow/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'Contact' %}">Contact Us</a><br><br>
+    <a href="{% url 'About' %}">AboutUs</a>
+  </footer>
+</body>
+
+
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

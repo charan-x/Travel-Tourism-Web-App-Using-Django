@@ -1,0 +1,254 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+  <br><br>
+  <h1>Dubai</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/dubai.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/dubai.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/dubai.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About Dubai</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">Discover the extravagant luxury, high-tech
+    facilities and old world charm of Dubai. This United Arab Emirates (UAE) state is located on the eastern coast of
+    the Arabic Peninsular, in the southwest corner of the Arabian Gulf. Renowned, worldwide, as a booming centre of
+    international trade and innovation, Dubai has fast become one of the world’s most popular tourist destinations. Only
+    in Dubai can one gaze upon, and travel up, the world’s largest freestanding structure (the Burj Khalifa), shop in
+    both exclusive designer malls and traditional trade souks and indulge in feasts inspired by the flavours of the
+    world while staying in a 7-star hotel!
+
+    Dubai is the largest and most populous city in the UAE. There are approximately 2,780,000 residents from over 200
+    nationalities, plus countless tourists and traders on any given day! The state-of-the-art technology and
+    infrastructure, tax-free living and a strategic location in the centre of the major trading continents, make Dubai
+    the ideal to place to do business. The by-product of this is a dynamic prosperity—the reason that Dubai is one of
+    the leading luxury holiday destinations in the world! Extravagance abounds in this captivating city-state. There is
+    a rich Arabic culture that underpins local life in the city, but all are welcome and encouraged to explore and enjoy
+    Dubai to the absolute fullest!</p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Aquaventure Waterpark</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Outstanding amongst other water stops in Dubai, the Aquaventure Waterpark Dubai, is the Middle East and Europe’s
+    number 1 water park. It has extraordinary compared to other water slides on the planet for an experience like none
+    other. Aside from the slides, the recreation center additionally has different other engaging alternatives like
+    Dolphin Adventure, Ultimate Aquarium Dive, and The Lost Chambers Aquarium.
+  </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. Burj Khalifa </h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    At The Top and At The Top Sky is probably the best scene to visit in Dubai with family. The visit takes you to the
+    124th and 125th floor of the tallest structure on the planet and offers an all-encompassing encounter of the whole
+    city. The view from the 124th floor, which has a perception deck, is, for the absence of words, unimaginable. Also,
+    if by chance you have taken the more premium, “At The Top Sky” visit at Burj Khalifa, at that point, you will avoid
+    those lines and climb straight away to the 148th floor for a much increasingly extraordinary flying experience.
+    Regardless of what you pick, there would be minutes in this entire journey that none of your relatives would
+    overlook for quite a while.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. Dubai Aquarium and Underwater Zoo </h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Dubai Aquarium and Underwater Zoo are probably the best places to visit in Dubai for children and families the same.
+    This aquarium comes among the biggest suspended aquariums on the planet, and one needs to indeed observe it to feel
+    its magnificence. It is situated on the Ground Level of The Dubai Mall and, in this way, is an ideal choice for the
+    individuals who need a portion of shopping and diversion. The 10 million aquarium tank is home to a vast number of
+    aquatic creatures and has more than 140 species. There are more than 300 sharks and beams, and this incorporates the
+    most significant assortment of Sand Tiger Sharks on the planet.
+
+    To benefit as much as possible from your visit, voyagers can decide to do a glass-base ride over the tank, take a
+    plunge for a beautiful pen swimming movement, shark jump, or pick an increasingly conventional method for
+    investigating by strolling through the 48-meter burrow that offers a 270-degree perspective on the aquarium.
+    <br><br>
+  </p>
+
+
+
+
+  <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/dubai/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>  
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+</body>
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,173 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <style>
+    
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: larger;
+      font-size: large;
+      
+    }
+
+    body {
+      
+      margin: 0;
+      background-image: url('/static/Images/lgbg.png');
+      font-family: 'Nunito', sans-serif;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 33.3%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 15px;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    .container::after,
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #4285f4;
+      text-align: center;
+      font-size: medium;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 12px;
+      height: 50px;
+      font-size: medium;
+    }
+
+    .button:hover {
+      background-color: teal;
+    }
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+    p{
+      line-height: 200%;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="about-section">
+    <h1>About Us</h1>
+    <h2>What is Travel Tourism and Hospitality ?</h2>
+    <p>The travel and tourism industry in India is currently experiencing unprecedented growth. The industry is one of
+      the largest and most profitable industries in India and contributes significantly to the foreign exchange earned.
+      As per various studies, the industry is expected to create over 45 million jobs in India by 2025.
+
+      Students have endless career opportunities in this fast growing industry of travel and tourism. Candidates looking
+      to pursue their career in the industry can choose to work for travel agencies, government tourism departments,
+      tour operations, immigration and customs services, airlines, hotels, and the list continues.
+
+      Candidates can pursue a degree, diploma, or certificate course in travel and tourism at graduation or
+      post-graduation level. Candidates can also pursue PhD in their chosen subject of travel and tourism to build their
+      career in the field of research.
+
+      Know what all a travel and tourism course has to offer in terms of the course curriculum, job profiles, top
+      recruiters, and more.</p>
+  </div>
+
+  <h2 style="text-align:center; color: white;">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <br><br>
+        <img src="/static/Images/user1.svg" alt="Jane" style="width:100%; height: 200px;">
+        <div class="container">
+          <h2>P.L.Hari Charan</h2>
+          <p class="title">Team Lead</p>
+          <p>E-mail 190031328@kluniversity.in</p>
+          <p><button onclick="location.href = '/explore/contact';" class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <br><br>
+        <img src="/static/Images/user2.svg" alt="Mike" style="width:100%; height: 200px;">
+        <div class="container">
+          <h2>P.Deepak</h2>
+          <p class="title">Team Member</p>
+          <p>E-mail 190031307@kluniversity.in</p>
+          <p><button onclick="location.href = '/explore/contact';" class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <br><br>
+        <img src="/static/Images/user3.svg" alt="John" style="width:100%; height: 200px;">
+        <div class="container">
+          <h2>G.Karthik Kalyan</h2>
+          <p class="title">Team Member</p>
+          <p>E-mail 190030551@kluniversity.in</p>
+          <p><button onclick="location.href = '/explore/contact';" class="button">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+{% endblock %}

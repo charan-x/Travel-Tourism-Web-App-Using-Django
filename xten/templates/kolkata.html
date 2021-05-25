@@ -1,0 +1,275 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+
+  <br><br>
+  <h1>Kolakata</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/kolkata.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/kolkata.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/kolkata.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About Kolkata</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">Kolkata also known as Calcutta /kælˈkʌtə/,[16] the
+    official
+    name until 2001) is the capital of the Indian state of West Bengal. Located on the eastern bank of the Hooghly
+    River, the city is approximately 80 kilometres (50 mi) west of the border with Bangladesh. It is the primary
+    business, commercial, and financial hub of Eastern India and the main port of communication for North-East
+    India,[17] as well as having the third-largest urban economy of India.[13] Kolkata is home to 9,600 millionaires and
+    4 billionaires with a total wealth of $290 billion.[18][19] According to the 2011 Indian census, Kolkata is the
+    seventh-most populous city in India, with a population of 4.5 million residents within the city limits, and a
+    population of over 14.1 million residents in the Kolkata Metropolitan Area, making it the third-most populous
+    metropolitan area in India. The Port of Kolkata is India's oldest operating port and its sole major riverine port.
+    Kolkata is known as the "cultural capital of India" for the city's historical and architectural significance.[1]
+
+    In the late 17th century, the three villages that predated Calcutta were ruled by the Nawab of Bengal under Mughal
+    suzerainty. After the Nawab granted the East India Company a trading licence in 1690,[20] the area was developed by
+    the Company into an increasingly fortified trading post. Nawab Siraj ud-Daulah occupied Calcutta in 1756, and the
+    East India Company retook it the following year. In 1793 the East India company was strong enough to abolish rule,
+    and assumed full sovereignty of the region. Under the company rule and later under the British Raj, Calcutta served
+    as the capital of British-held territories in India until 1911, when its perceived geographical disadvantages,
+    combined with growing nationalism in Bengal, led to a shift of the capital to New Delhi. Calcutta was the centre for
+    the Indian independence movement. Following independence in 1947, Kolkata, which was once the centre of Indian
+    commerce, culture, and politics, suffered many decades of political violence and economic stagnation.[21]</p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Victoria Memorial</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Located in the heart of Kolkata, Victoria Memorial is a memorial structure of Queen Victoria. The structure is made
+    beautifully with white marble and looks exclusively opulent. This iconic structure is enclosed by a well-maintained
+    and gorgeous garden that has several statutes in it. One can enjoy the breathtaking views of Victoria Memorial at
+    night when it illuminates. It is one of the best places to visit in Kolkata, the visit of which you should not miss
+    at any cost. Also, check out the sound and light show that takes place in the evening to add a delight to your
+    visit.
+
+
+
+    Address: Victoria Memorial Hall, 1, Queen’s Way, Kolkata
+
+    Timings: 10:00 AM-5:00 PM
+  </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. Belur Math</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    It is a pilgrimage place in Kolkata that is popular worldwide. Here, people from every country come to experience
+    peace and enjoy the tranquility that is available in this environment. The temple is constructed very beautifully,
+    skillfully and artistically that speaks out the heart of the Ramakrishna Movement. It also consists of a museum that
+    you can visit for additional delight. Take a tour to Belur Math, a headquarter of Ramakrishna Math and Mission to
+    find inner peace.
+
+
+
+    Location: Belur, Howrah, WB
+
+    Timings: 6:00-11:30 AM & 4:00-7:00 PM
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. Howrah Bridge</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    You might be wondering how a Bridge can be a place to visit in Kolkata? Right? Well, it is because of the longest
+    cantilever steel bridge in the World that connects Howrah and Kolkata. It becomes a tourist attraction at night when
+    the lights fall on it, making it opulence in appearance. Tourist loves to take a ferry ride from the launch ghat
+    that you should not miss to check out the priceless view at night in Kolkata.
+
+
+
+    Address: Kolkata, Constructed over Hoogly River
+
+    Timings: No timings, best visited at evening hours
+  </p>
+
+
+
+
+  <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/kolkata/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>
+  <button onclick="location.href ='/explore/trains/'" style="display: inline-block;" id="but2">Book a Train</button>
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'Contact' %}">Contact Us</a><br><br>
+    <a href="{% url 'About' %}">AboutUs</a>
+  </footer>
+</body>
+
+
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

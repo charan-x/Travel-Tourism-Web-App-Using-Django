@@ -1,0 +1,180 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+
+  <style>
+    #ticket {
+      background-color: rgb(255, 255, 255);
+      width: 900px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding: 40px;
+
+    }
+
+    #heading {
+     
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      padding: 10px;
+    }
+
+#hi{
+  width: 900px;
+  margin: 0 auto;
+  box-shadow: 3px 6px 17px;
+  border-radius: 10px;
+}
+
+    input {
+
+      height: 40px;
+      border: none;
+      outline: none;
+      font-size: medium;
+      padding: 15px;
+      background-color: rgb(241, 241, 241);
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    label {
+      font-size: large;
+      font-weight: 600;
+
+    }
+
+    .but_1 {
+      width: 25%;
+      height: 40px;
+      letter-spacing: 3px;
+      font-size: larger;
+      border: 3px solid #35af50;
+     
+      background-color: rgb(241, 241, 241);
+      color: #35af50;
+
+
+      cursor: pointer;
+      border-radius: 25px;
+    }
+
+    .but_1:hover {
+      cursor: pointer;
+      border: 3px solid #4285f4;
+      background-color: #4285f4;
+      color: white;
+    }
+ 
+  </style>
+</head>
+
+
+
+<body>
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+  <h2 style="margin-left: 45%;">Your Tickets</h2>
+  <br><br>
+ 
+    {% for ticket in Tickets reversed %}
+    <div id="hi">
+    {% if ticket.airline == "SpiceJet" %}
+    <div id="heading" style="background-color: rgb(255, 0, 0);">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% elif ticket.airline == "IndiGo" %}
+    <div id="heading" style="background-color: #4285f4;">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% elif ticket.airline == "Vistara" %}
+    <div id="heading" style="background-color: rgb(93, 1, 129);">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% elif ticket.airline == "GoAir" %}
+    <div id="heading" style="background-color: rgb(0, 7, 107);">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% elif ticket.airline == "AirAsia" %}
+    <div id="heading" style="background-color: tomato;">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% elif ticket.airline == "Air India" %}
+    <div id="heading" style="background-color: rgb(1, 129, 29);">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% else %}
+    <div id="heading" style="background-color: rgb(0, 0, 0);">
+      <h3>{{ticket.airline}} Airlines</h3>
+    </div>
+    {% endif %}
+    <div id="ticket">
+      <h3>Ticket ID {{ ticket.ticketID }}</h3><br>
+      <label for="fdest" style="display: inline-block;">Name</label>
+      <input name="name" type="text" value="{{ ticket.name }}" readonly>
+      <button class="but_1"
+        style="margin-left: 10%;">Booked</button><br><br>
+
+      <label for="fdest">From</label>
+      <input name="fdest" type="text" value="{{ ticket.fdest }} Airport" readonly>
+
+      <label for="tdest" style="display: inline-block;">To</label>
+      <input name="tdest" style="display: inline-block;" type="text" value="{{ ticket.tdest }} Airport"
+        readonly><h3 style="display: inline-block; margin-left: 5%;">Flight NO. {{ ticket.fNO }}</h3><BR><br><br>
+
+      <label for="depart">Depart</label>
+      <input style="display: inline-block;" name="depart" type="date" value="{{ ticket.depart }}" readonly>
+      {% if ticket.retur %}
+      <label for="return" style="display: inline-block;">Return</label>
+      <input name="return" type="date" value="{{ ticket.retur }}" readonly><br><br>
+      {% else %}
+      <br><br>
+      {% endif %}
+      <label for="class">Class</label>
+      <input name="class" type="text" value="{{ ticket.classi }}" readonly>
+
+      <label for="pass">Passengers</label>
+      <input name="pass" type="text" value="{{ ticket.passe }}" readonly><br>
+      <p></p>
+    </div>
+
+</div>
+    <br><br><br>
+    {% endfor %}
+   
+  <br><br>
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+
+</body>
+
+</html>
+{% endblock %}

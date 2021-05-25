@@ -1,0 +1,85 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+    .tckt{
+      background-color: rgb(255, 255, 255);
+      margin: 0 auto;
+      width: 700px;
+      padding: 30px;
+      box-shadow: 3px 6px 17px rgb(105, 105, 105);
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    .head{
+      width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: rgb(255, 196, 0);
+      padding: 5px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    input{
+      width: 200px;
+      padding: 12px;
+      height: 40px;
+      border: none;
+      outline: none;
+      background-color: rgb(236, 236, 236);
+      font-size: medium;
+      font-weight: 600;
+      border-radius:6px;
+    }
+    label{
+      font-size: medium;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+<h3 style="text-align: center;">Bus Tickets</h3><br><br>
+{% for bus in Buses reversed %}
+<div class="head"><h3>Ticket.NO {{bus.ticketID}}</h3></div>
+<div class="tckt">
+  <h3 style="text-align: center;">{{bus.travel}}</h3><br>
+<label for="from">From</label>
+<input name="name" type="text" value="{{bus.fromd}}" readonly>
+<label for="to">To</label>
+<input name="to" type="text" value="{{bus.tod}}" readonly><br><br>
+<label for="name">Name</label>
+<input name="name" type="text" value="{{bus.uname}}" readonly>
+<label for="date">Date</label>
+<input name="date" type="text" value="{{bus.date}}" readonly><br><br>
+<label for="cls">Class</label>
+<input name="cls" type="text" value="{{bus.clas}}" readonly>
+<label for="passe">Passengers</label>
+<input name="passe" type="text" value="{{bus.passe}}" readonly>
+</div>
+
+<br><br><br><br>
+{% endfor %}
+
+  </body>
+</html>
+
+{% endblock %}

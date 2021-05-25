@@ -1,0 +1,195 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+<div>
+    
+        <div id="container">
+
+          <form action="/explore/payment/" method="POST" >
+            
+      {% csrf_token %}
+            <h2 style="color: rgb(77, 77, 77);">Payment Gateway</h2>
+           <br>
+            <label class="amt" for="amount">Amount</label><br>
+            {% if Amount %}
+            <input name="amount"value="{{Amount}}" readonly>
+            {% else %}
+            <input name="amount"value="{{Price}} ₹" readonly>
+            {% endif %}
+            <br><br>
+            {% if Name %}
+            <input name="fname" required type="text" value="{{Name}}" placeholder="Payer Name">
+            {% else %}
+            <input name="fname" required type="text" placeholder="Payer Name">
+            {% endif %}
+            <br><br>
+            <input type="password" name="card" maxlength="12" required placeholder="Card Number XXXX-XXXX-XXXX-XXXX">
+            <br><br>
+            <select required name="bank" id="bank">
+              <option value="select">Select Bank</option>
+              <option value="SBI">SBI</option>
+              <option value="ICIC">ICIC</option>
+              <option value="Axis">Axis</option>
+              <option value="HDFC">HDFC</option>
+              <option value="Yes">Yes Bank</option>
+              <option value="Kotak Mahindra">Kotak Mahindra</option>
+            </select>
+            
+            <label class="dat" for="expdate">Expiry Date</label>
+            <input required style="text-transform: uppercase;" type="date" name="expdate">
+            <br><br>
+            <br>
+            <input required class="cvv" type="password" minlength="3" maxlength="3" placeholder="CVV">
+            {% if Mobile %}
+            <input class="mob" name="mob" value="{{Mobile}}" type="text" placeholder="Mobile Number">
+            {% else %}
+            <input class="mob" name="mob" maxlength="10" type="text" placeholder="Mobile Number">
+            {% endif %}
+            <br><br>
+            <button type="submit" name="sub1" id="button1">Get OTP</button>
+          </form><br>
+          <input class="otp" required type="text"  minlength="6" maxlength="6"  placeholder="Enter 6 Digit OTP"><br>
+          
+          <button onclick="location.href='/explore/myaccount/'; alert('Your Payment Is Successful Continue to My Bookings') "  name="sub2" type="submit" id="button2">Proceed To Pay</button>
+        </div>
+   
+</div>
+
+
+
+<br><br>
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+    <a href="#">klu@example.com</a></p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+
+  <style>
+
+    #button1{
+        width: 200px;
+        height: 50px;
+        outline-style: none;
+        border-style: none;
+        background-color: #F4B400;
+        color: white;
+        font-size: larger;
+        border-radius: 12px;
+       margin: 0 auto;
+       display: block;
+             box-shadow: 5px 10px 18px rgb(231, 231, 231); 
+            font-size: medium;
+    }
+    #button1:hover{
+        background-color: #0F9D58;
+        cursor: pointer;
+    }
+    .cvv{
+      width: 200px;
+      display: inline-block;
+    }
+    .otp{
+      width: 200px;
+    
+    }
+    .sd{
+      display: inline-block;
+      margin-left: 10px;
+    }
+    #button2{
+        width: 200px;
+        font-size: medium;
+        height: 50px;
+        outline-style: none;
+        border-style: none;
+        margin: 0 auto;
+        display: block;
+        background-color: #4285f4;
+        color: white;
+        border-radius: 12px;
+        box-shadow: 5px 10px 18px rgb(231, 231, 231);  
+    }
+    #button2:hover{
+        background-color: #DB4437;
+        cursor: pointer;
+    }
+    #container{
+        box-shadow: 5px 10px 18px rgb(83, 83, 83);
+        margin: 0 auto;
+        padding: 40px;
+        width: 700px;
+        border-radius: 15px;
+        background-color: rgb(243, 243, 243);
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        padding: 12px;
+        font-size: medium;
+        outline-style:none;
+        border-style: none;
+        border-radius: 12px;
+        display: block;
+        text-transform: capitalize;
+        margin : 0 auto;
+        box-shadow: 5px 10px 18px rgb(231, 231, 231);
+    }
+
+#bank{
+  width: 200px;
+    font-size: medium;
+    height: 50px;
+    padding: 12px;
+    border-style: none;
+    outline-style: none;
+    border-radius: 12px;
+    box-shadow: 5px 10px 18px rgb(231, 231, 231);
+}
+input[type='date']{
+  display: inline-block;
+  width: 200px;
+}
+
+.dat{
+  margin-left: 70px;
+}
+.amt{
+  display: inline;
+}
+body{
+ background-image: url('/static/Images/pay.png');
+ background-attachment: fixed; 
+background-size: 100%;
+}
+.mob{
+  width: 200px;
+  display: inline-block;
+  margin-left: 160px;
+}
+
+  </style>
+  </body>
+</html>
+
+{% endblock %}

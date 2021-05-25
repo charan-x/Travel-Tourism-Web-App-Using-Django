@@ -1,0 +1,168 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+      body{
+          background-image: url('/static/Images/suggestion.jpg');
+      }
+      .cont{
+          background-color: white;
+          padding: 60px;
+          width: 1200px;
+          margin: 0 auto;
+          border-radius: 10px;
+
+      }
+      label[for='fromd']{
+        font-weight: 600;
+        font-size: medium;
+      }
+      .hea{
+          background-color: white;
+          padding: 20px;
+          margin: 0 auto;
+          text-align: center;
+          width: 300px;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+
+
+      }
+      .fromd,.tod{
+          outline: none;
+          border: 1px solid;
+          border-color: rgb(182, 182, 182);
+          width: 250px;
+          padding: 12px;
+          font-weight: 600;
+          font-size: medium;
+          border-radius: 8px;
+      }
+      label[for='tod'],label[for='mode'],label[for='passe']{
+          margin-left: 50px;
+          font-weight: 600;
+          font-size: medium;
+      }
+      label[for='tod']{
+          margin-left: 100px;
+      }
+      .btn_1{
+          display: inline-block;
+          width: 200px;
+          height: 50px;
+          margin-left: 200px;
+          border-radius: 25px;
+          background-color: #4285f4;
+          border: 2px solid #4285f4;
+          color: white;
+          font-weight: 600;
+          font-size: medium;
+          
+      }
+      label[for="mode"]{
+          margin-left: 120px;
+         
+      }
+      .btn_1:hover{
+          
+          color: white;
+          border: 2px solid #4285f4;
+          color: #4285f4;
+          background-color: transparent;
+      }
+      input[type='number']{
+          width: 100px;
+          font-size: medium;
+      }
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+<div class="hea"><h3>Suggestions</h3></div>
+<div class="cont">
+    <form action="/explore/suggestions/" method="POST">
+        {% csrf_token %}
+        <label for="fromd">From</label>
+      <select required name="fromd" class="fromd">
+        <option >From Destination</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Vijayawada">Vijayawada</option>
+        <option value="Vizag">Vizag</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+      </select>
+      <label for="tod">To</label>
+      <select required name="tod" class="tod" >
+        <option >To Destination</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Goa">Goa</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Mysore">Mysore</option>
+        <option value="Manali">Manali</option>
+      </select>
+      
+      <button class="btn_1">Show Suggestions</button>
+    </form>
+    <div id="hide" style="text-align: center;">
+    {% if Sug1 %}
+    <br><br><br>
+    <h3>{{Sug1}}</h3><br>
+    {% endif %}
+    {% if Sug2 %}
+    <h4>{{Sug2}}</h4><br>
+    {% endif %}
+    {% if Sug3 %}
+    <h4>{{Sug3}}</h4><br>
+    {% endif %}
+    {% if Sug4 %}
+    <h4>{{Sug4}}</h4><br>
+    {% endif %}
+    {% if Sug5 %}
+    <h4>{{Sug5}}</h4><br>
+    {% endif %}
+    {% if Sug6 %}
+    <h4>{{Sug6}}</h4><br>
+    {% endif %}
+    {% if Sugd %}
+    <h4>{{Sugd}}</h4><br>
+    {% endif %}
+    {% if Sug7 %}
+    <h4>{{Sug7}}</h4><br>
+    {% endif %}
+    {% if Sug8 %}
+    <h4>{{Sug8}}</h4><br>
+    {% endif %}
+    {% if Sugpass %}
+    <h4>{{Sugpass}}</h4>
+    {% endif %}
+    <button class="btn_1" onclick="document.getElementById('hide').style.display='none'">Hide</button>
+  </div>
+</div>
+<script>
+  
+</script>
+<br><br>
+  </body>
+</html>
+
+{% endblock %}

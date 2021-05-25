@@ -1,0 +1,139 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+
+  <style>
+    .cont{
+      background-color: white;
+      margin:0 auto;
+      width: 600px;
+      padding: 30px;
+      border-radius: 9px;
+      opacity: 0.95;
+    }
+    input,.from,.to,.clas{
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      outline: none;
+      padding: 13px;
+      height: 50px;
+      border-style: solid;
+      border-radius: 8px;
+      border-color: teal;
+      font-size: large;
+    }
+    input{
+      border: 1px solid;
+      border-color: teal;
+    }
+    input[type ='date']{
+      width: 200px;
+      display: inline;
+      border: 1px solid;
+      border-color: teal;
+   
+    }
+    .but_1,.but_2{
+      margin:0 auto;
+      display: block;
+      height: 50px;
+      width: 200px;
+      border-radius: 6px;
+      outline: none;
+      border:none;
+      background-color: #4285f4;
+      color: white;
+      font-size: medium;
+    }
+    .but_1:hover{
+      background-color: yellowgreen;
+    }
+ .but_2{
+  background-color: rgb(255, 166, 0);
+  
+ }
+ .but_2:hover{
+  background-color: teal;
+ }
+ input[type='number']{
+   width: 200px;
+   display: inline-block;
+ }
+
+  </style>
+</head>
+
+
+<body style="background-image: url('/static/Images/train.jpg');">
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br>
+  <div class="cont">
+    <form  method="POST">
+      {% csrf_token %}
+      <label for="fromd">Choose From Destination</label><br>
+      <select required name="fromd" class="from" value ="{{From}}">
+        <option >From Destination</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Vijayawada">Vijayawada</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+        <option value="Tirupati">Tirupati</option>
+      </select><br>
+      <label for="tod">Choose From Destination</label><br>
+      <select required name="tod" class="to" value="{{Tod}}">
+        <option >To Destination</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Kochi">Kochi</option>
+        <option value="Agra">Agra</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+      </select>
+      <br>
+      <label for="date">Date</label><br>
+      <input name = "date" type="date" value="{{Date}}"><br><br>
+      <label for="cls">Choose Class</label><br>
+      <select required name="clas" class="clas">
+        <option >Class</option>
+        <option value="Sleeper Class (SL)">Sleeper Class (SL)</option>
+        <option value="Three Tier Air Conditioned Class (3A)">Three Tier Air Conditioned Class (3A)</option>
+        <option value="Two Tier Air Conditioned Class (2AC)">Two Tier Air Conditioned Class (2AC)</option>
+        <option value="First Class Air Conditioned (1AC)">First Class Air Conditioned (1AC)</option>
+      </select><br>
+      <label for="pass">Passengers</label><br>
+      <input required name = "passe" type="number" min="1" max="7"><br><br><br>
+      <button class="but_1" type="submit">Search Trains</button>
+    
+      {% if Tname and Tno %}
+      <label for="tname">Train Name</label><br>
+      <input name = "tname" type="text" readonly value="{{Tname}} From {{From}} To {{Tod}}"><br>
+      <label for="tno">Train Number</label><br>
+      <input name = "tno" type="text" readonly value="{{Tno}}">
+ 
+     
+    
+    </form>
+    <br><br>
+      <button onclick="alert('To confirm your booking please Proceed to Pay'); location.href='/explore/paymentmode/'" class="but_2">Book Ticket</button>
+      <br>
+      {% else %}
+      <br>
+      {% endif %}
+  </div>
+  <br><br>
+  </body>
+</html>
+
+{% endblock %}

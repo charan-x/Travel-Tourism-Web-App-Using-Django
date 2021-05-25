@@ -1,0 +1,94 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+      <style>
+          .tckt{
+      background-color: rgb(255, 255, 255);
+      margin: 0 auto;
+      width: 700px;
+      padding: 30px;
+      box-shadow: 3px 6px 17px rgb(105, 105, 105);
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    .head{
+      width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: rgb(0, 153, 255);
+      padding: 5px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    input{
+      width: 200px;
+      padding: 12px;
+      height: 40px;
+      border: none;
+      outline: none;
+      background-color: rgb(236, 236, 236);
+      font-size: medium;
+      font-weight: 600;
+      border-radius:6px;
+    }
+    label{
+      font-size: medium;
+      font-weight: 600;
+    }
+      </style>
+    </div>
+  </nav><br><br>
+  <h3 style="text-align: center;">Your Hotel Bookings</h3>
+{% for hotel in Hotels reversed %}
+<br><br>
+<div class="head">
+  <BR><h3> {{hotel.destination}} </h3><BR>
+  <h3> Booking ID #{{hotel.bID}}</h3><BR>
+</div>
+<div class="tckt">
+  <h3 style="text-align: center;">{{bus.travel}}</h3><br>
+<label for="from">Check In</label>
+<input name="name" type="text" value="{{hotel.checkin}}" readonly>
+<label for="to">Check Out</label>
+<input name="to" type="text" value="{{hotel.checkout}}" readonly><br><br>
+<label for="name">Name</label>
+<input name="name" type="text" value="{{hotel.uname}}" readonly>
+<label for="rooms">Rooms</label>
+<input name="rooms" type="text" value="{{hotel.rooms}}" readonly><br><br>
+<label for="type">Room Type</label>
+<input name="type" type="text" value="{{hotel.type}}" readonly><br><br>
+<label for="adults">Adults</label>
+<input name="adults" type="text" value="{{hotel.adults}}" readonly>
+<label for="children">Children</label>
+<input name="children" type="text" value="{{hotel.children}}" readonly><br><br>
+<label for="date">Date And Time Of Booking</label>
+<input name="date" type="text" value="{{hotel.date}}" readonly>
+</div>
+
+<br><br><br><br>
+
+{% endfor %}
+
+  </body>
+</html>
+
+{% endblock %}

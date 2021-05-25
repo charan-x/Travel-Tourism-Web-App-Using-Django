@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/slide.css' %}">
+  <title>Grand Travel</title>
+</head>
+<body id="mpi">
+  <nav>
+    <div class="nav-items">
+      <br>
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+      <span style="flex: 1 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+
+      <a href="{% url 'Contact' %}">Contact Us</a>
+  
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+     
+    </div>
+  </nav>
+  
+  <div id = "smbar">
+    <div>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Flights' %}">Flights</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Hotels' %}">Hotels</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Trains' %}">Trains</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Buses' %}">Buses</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Card' %}">Gallery</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Account' %}">Bookings</a>
+      <a style="color: rgb(255, 255, 255);font-size: larger; font-weight: 400;"href="{% url 'Suggestion' %}">Suggestions</a>
+    </div>
+  </div>
+
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+  <img src="/static/Images/si1.jpg" style="width:100%">
+    
+  </div>
+
+  <div class="mySlides fade">
+    
+    <img src="/static/Images/si2.jpg" style="width:100%">
+    
+  </div>
+
+  <div class="mySlides fade">
+    
+    <img src="/static/Images/si3.jpg" style="width:100%">
+    
+  </div>
+<br><br>
+
+</div>
+<h2 style="margin-left: 45%;">Explore World !</h2><br><br>
+
+<ul id="rig">
+  <li>
+      <a class="rig-cell" href="/xten/paris">
+          <img class="rig-img" src="/static/Images/paris.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Paris</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/newyork">
+          <img class="rig-img" src="/static/Images/newyork.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">New York</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/tokyo">
+          <img class="rig-img" src="/static/Images/tokyo.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Tokyo</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/moscow">
+          <img class="rig-img" src="/static/Images/moscow.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Moscow</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/dubai">
+          <img class="rig-img" src="/static/Images/dubai.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Dubai</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/singapore">
+          <img class="rig-img" src="/static/Images/singapore.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Singapore</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/barcelona">
+          <img class="rig-img" src="/static/Images/barcelona.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Barcelona</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/losangeles">
+          <img class="rig-img" src="/static/Images/losangels.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Los Angeles</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/mumbai">
+          <img class="rig-img" src="/static/Images/mumbai.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Mumbai</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/hyderabad">
+          <img class="rig-img" src="/static/Images/hyderabad.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Hyderabad</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/kolkata">
+          <img class="rig-img" src="/static/Images/kolkata.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Kolkata</span>
+      </a>
+  </li>
+  <li>
+      <a class="rig-cell" href="/xten/mysore">
+          <img class="rig-img" src="/static/Images/mysore.jpg">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Mysore</span>
+      </a>
+  </li>
+  <li>
+    <a class="rig-cell" href="/xten/kerala">
+        <img class="rig-img" src="/static/Images/kerala.jpg">
+        <span class="rig-overlay"></span>
+        <span class="rig-text">Kerala</span>
+    </a>
+</li>
+<li>
+  <a class="rig-cell" href="/xten/goa">
+      <img class="rig-img" src="/static/Images/goa.jpg">
+      <span class="rig-overlay"></span>
+      <span class="rig-text">Goa</span>
+  </a>
+</li>
+<li>
+  <a class="rig-cell" href="/xten/agra">
+      <img class="rig-img" src="/static/Images/agra.jpg">
+      <span class="rig-overlay"></span>
+      <span class="rig-text">Agra</span>
+  </a>
+</li>
+<li>
+  <a class="rig-cell" href="/xten/delhi">
+      <img class="rig-img" src="/static/Images/delhi.jpg">
+      <span class="rig-overlay"></span>
+      <span class="rig-text">New Delhi</span>
+  </a>
+</li>
+</ul>
+<br><br>
+<footer>
+  <p>Copyright © 2021 SDP169<br><br>
+  <a href="#">klu@example.com</a></p><br>
+  <a href="{% url 'About' %}">AboutUs</a>
+  <br><br>
+  <a href="{% url 'Contact' %}">ContactUs</a>
+</footer>
+
+
+
+  {% block content %}
+   
+  {% endblock %}
+ 
+</body>
+</html>
+<script>
+  var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+</script>

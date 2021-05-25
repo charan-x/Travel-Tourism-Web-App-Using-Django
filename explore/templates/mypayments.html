@@ -1,0 +1,134 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+      input{
+          width: 100%;
+          height: 50px;
+          outline: none;
+          border: none;
+          border-radius: 8px;
+          padding: 15px;
+          font-size: large;
+          font-weight: 600;
+      }
+      label{
+          font-size: large;
+          font-weight: 600;
+      }
+      .cont{
+          margin: 0 auto;
+          width: 500px;
+          padding: 40px;
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          background-color: whitesmoke;
+      }
+      .head{
+          text-align: center;
+          background-color: teal;
+          color: white;
+          width: 500px;
+          padding: 10px;
+          margin: 0 auto;
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+      }
+      .head1{
+          text-align: center;
+          background-color: rgb(255, 166, 0);
+          color: white;
+          width: 500px;
+          padding: 10px;
+          border-top-right-radius: 8px;
+          border-top-left-radius: 8px;
+          margin: 0 auto;
+      }
+      .whole{
+          box-shadow: 3px 6px 17px rgb(114, 114, 114);
+          width: 500px;
+          margin: 0 auto;
+          border-radius: 8px;
+      }
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+        <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+<br><br>
+<h3 style="text-align: center;">Debit Card Transactions</h3><br>
+{% if Payments %}
+
+{% for pay in Payments reversed %}
+<div class="whole">
+<div class="head"><h4>Transaction.ID  #{{pay.payID}}</h4></div>
+<div class="cont">
+<label for="fname">Payer Name</label><BR>
+<input name="fname" type="text" readonly value="{{pay.fname}}"><BR><br>
+    <label for="card">Amount</label><BR>
+<input name="card" type="text" readonly value="{{pay.amount}}"><BR><br>
+    <label for="bank">Bank</label><BR>
+<input name="bank" type="text" readonly value="{{pay.bank}}"><BR><br>
+    <label for="date">Date and Time</label><BR>
+<input name="date" type="text" readonly value="{{pay.date}}"><BR><br>
+    <label for="mode">Mode Of Payment</label><BR>
+        <input name="mode" type="text" readonly value="Debit Card"><BR><br>
+
+</div>
+</div>
+
+<br><br><br>
+
+{% endfor %}
+{% else %}
+<h3 style="text-align: center;">No Transaction History</h3><br>
+{% endif %}
+<h3 style="text-align: center;">Net Banking Payments</h3>
+
+{% if Netpays %}
+
+{% for pay1 in Netpays reversed %}
+<br>
+<div class="whole">
+<div class="head1"><h4>Transaction.ID  #{{pay1.payID}}</h4></div>
+<div class="cont">
+<label for="fname">Payer Name</label><BR>
+<input name="fname" type="text" readonly value="{{pay1.usr}}"><BR><br>
+    <label for="card">Amount</label><BR>
+<input name="card" type="text" readonly value="{{pay1.amount}} "><BR><br>
+    <label for="date">Date  and Time</label><BR>
+<input name="date" type="text" readonly value="{{pay1.date}}"><BR><br>
+    <label for="mode">Mode Of Payment</label><BR>
+        <input name="mode" type="text" readonly value="Net Banking"><BR><br>
+
+</div>
+</div>
+<br><br><br>
+
+{% endfor %}
+{% else %}
+<br><br>
+<h3 style="text-align: center;">No NetBanking Transaction History</h3><br>
+{% endif %}
+  </body>
+</html>
+
+{% endblock %}

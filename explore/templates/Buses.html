@@ -1,0 +1,135 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+
+.cont{
+  background-color: white;
+  padding: 50px;
+  border-radius: 6px;
+  width: 1520px;
+  margin: 0 auto;
+  margin-top: 7%;
+  font-weight: 600;
+
+}
+label{
+  font-size: medium;
+}
+input{
+  padding: 12px;
+  width: 200px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: rgb(240, 240, 240);
+  font-size: medium;
+  
+}
+input[type='number']{
+  padding: 12px;
+  width: 100px;
+  font-size: medium;
+  
+}
+input[type='date']{
+  padding: 12px;
+  width: 180px;
+  font-size: medium;
+  
+}
+select{
+  width: 150px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: rgb(240, 240, 240);
+  font-size: medium;
+}
+.but_1,.but_2{
+  width: 150px;
+  height: 45px;
+  background-color: white;
+  outline: none;
+  font-weight: 600;
+  border:2px solid;
+  border-color:black ;
+  color: black;
+  font-size: medium;
+  border-radius: 25px;
+}
+.but_1:hover{
+  background-color:black;
+  color: white;
+}
+.but_2{
+  margin:0 auto;
+  display: block;
+  border-color:#4285f4 ;
+  color: #4285f4;
+}
+.but_2:hover{
+  background-color:#4285f4;
+  color: white;
+}
+  </style>
+</head>
+
+
+<body style="background-image: url('/static/Images/bus.jpg');">
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br>
+  <div class="cont">
+    <form action="/explore/buses/" method="POST">
+      {% csrf_token %}
+      <label for="fromd">From</label>
+      <input required type="text"  name="fromd"placeholder="Enter Destination">
+      <label style="margin-left: 30px;" for="tod">To</label>
+      <input required type="text" name="tod"placeholder="Enter Destination">
+      <label style="margin-left: 30px;" for="date">Date</label>
+      <input required type="date" name="date"placeholder="Enter Destination">
+      <label style="margin-left: 30px;"for="clas">Class</label>
+      <select name="clas" >
+        <option>Choose Class</option>
+        <option>AC Sleeper</option>
+        <option>NON-AC Sleeper</option>
+        <option>AC Seater</option>
+        <option>NON-AC Seater</option>
+        
+      </select>
+      <label style="margin-left: 30px;" for="passe">Passengers</label>
+      <input name="passe" max="6" min="1" required type="number">
+      <button class="but_1" type="submit" style="margin-left: 60px;">Search Buses</button>
+    </form>
+    <div>
+    {% if Travels and From and To %}
+    <br><br>
+    <label style="margin-left: 400px;" for="det">Travels</label>
+    <input  name="det" type="text" value="{{Travels}}" readonly>
+    <label style="margin-left: 30px;" for="det">Destination</label>
+    <input name="det" type="text" value="{{From}} To {{To}}" readonly>
+    <br><br><br>
+    <button class="but_2" onclick="location.href='/explore/paymentmode/'" >Confirm Booking</button>
+    {% endif %}
+  </div>
+  </div>
+
+
+  </body>
+</html>
+
+{% endblock %}

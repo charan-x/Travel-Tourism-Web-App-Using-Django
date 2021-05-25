@@ -1,0 +1,133 @@
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+<div>
+    <form action="/explore/payment/" method="POST" >
+      {% csrf_token %}
+        <div id="container">
+            <h2 >Payment Gateway</h2><br><br>
+            
+            <input name="name" required type="text" placeholder="Payer Name">
+            <br><br>
+            <input type="password" name="card" required placeholder="Card Number XXXX-XXXX-XXXX-XXXX">
+            <br><br>
+            <label for="expdate">Expiry Date</label><br><br>
+            <input required style="text-transform: uppercase;" type="date" name="expdate">
+            <br><br>
+            <input required style="width: 40%;" type="password" placeholder="CVV">
+            <br><br>
+            <input required  type="text" name="email"placeholder="Email">
+            <br><br>
+            <input required  type="text" name="number" placeholder="Mobile Number">
+            <br><br>
+            <button id="button1">Get OTP</button>
+            <br><br>
+            <input required style="width: 40%;" type="text" placeholder="Enter 6 Digit OTP">
+            <br><br>
+            <button onclick="alert('Your payment is successful please continue to Homepage')" type="submit" id="button2">Make Payment</button>
+        </div>
+    </form>
+</div>
+
+
+
+<br><br>
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+    <a href="#">klu@example.com</a></p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+
+  <style>
+
+    #button1{
+        width: 150px;
+        height: 50px;
+        outline-style: none;
+        border-style: none;
+        background-color: #F4B400;
+        color: white;
+        font-size: larger;
+        border-radius: 12px;
+        display: block;
+             margin : 0 auto;
+             box-shadow: 5px 10px 18px rgb(231, 231, 231); 
+            font-size: medium;
+    }
+    #button1:hover{
+        background-color: #0F9D58;
+        cursor: pointer;
+    }
+
+    #button2{
+        width: 150px;
+        font-size: medium;
+        height: 50px;
+        outline-style: none;
+        border-style: none;
+        background-color: #4285f4;
+        color: white;
+        display: block;
+             margin : 0 auto;
+        border-radius: 12px;
+        box-shadow: 5px 10px 18px rgb(231, 231, 231);  
+    }
+    #button2:hover{
+        background-color: #DB4437;
+        cursor: pointer;
+    }
+    #container{
+        box-shadow: 5px 10px 18px rgb(83, 83, 83);
+        margin: 0 auto;
+        padding: 40px;
+        width: 700px;
+        border-radius: 15px;
+        background-color: rgb(243, 243, 243);
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        padding: 12px;
+        font-size: medium;
+        outline-style:none;
+        border-style: none;
+        border-radius: 12px;
+        display: block;
+        text-transform: capitalize;
+        margin : 0 auto;
+        box-shadow: 5px 10px 18px rgb(231, 231, 231);
+    }
+
+
+body{
+ background-image: url('/static/Images/pay.png');
+ background-attachment: fixed; 
+background-size: 100%;
+}
+
+  </style>
+  </body>
+</html>
+
+{% endblock %}

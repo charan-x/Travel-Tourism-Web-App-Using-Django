@@ -1,0 +1,279 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+
+
+
+  <br><br>
+  <h1>Los Angeles</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/losangels.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/losangels.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/losangels.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About LosAngeles</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">The city of Los Angeles (also known simply as
+    L.A., and nicknamed the "City of Angels") is the most populous city in California. Located on a broad basin in
+    Southern California, the city is surrounded by vast mountain ranges, valleys, forests, beautiful beaches along the
+    Pacific Ocean, and nearby desert.
+
+    The metropolitan area is the second-most populous in the United States and home to over 17 million people who hail
+    from all parts of the globe. The metropolitan area is spread across Los Angeles County, Orange County, and parts of
+    San Bernardino County, Riverside County, and Ventura County.
+
+    Los Angeles is an important center of culture, medicine, agriculture, business, finance, energy, aerospace, science,
+    food processing, media, international trade, and tourism. International tourists regard Los Angeles as most famous
+    for "Hollywood," but a long-running trend in favor of outsourcing of film and television production has critically
+    undermined the sector to the point where entertainment and media employ only about 120,000 people in the entire
+    metro area (and most of them work in Burbank or Culver City, not Hollywood). Many major motion picture deals and
+    premieres still occur in Los Angeles, but the vast majority of those films are actually shot elsewhere. However,
+    some post-production, editing, promotion, distribution, and archiving work still occurs in Los Angeles. In addition,
+    L.A. remains a major center for production of television shows and television commercials, as well as music
+    recordings.
+
+    Furthermore, at least in the English-speaking world, it is still obligatory for most celebrities-to-be to live for
+    several years in L.A. until they make it big in Hollywood. Most of them ultimately flee elsewhere after they get
+    sick and tired of being chased by crazed fans, tourists, and paparazzi, and only after they've hooked up with the
+    top talent agents in Hollywood (meaning that now the best scripts and songs come to them, rather than the other way
+    around). Thus, L.A. is notorious for its celebrity-oriented culture, as exemplified by the "star maps" sold at
+    tourist traps which feature known locations of celebrities' homes.</p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Universal Studios Hollywood</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Universal Studios Theme Park is known for its mind-blowing rides based on blockbuster movies, but it is also a
+    working movie studio and an attraction everyone can enjoy. The highlight for most people is the ever-changing
+    selection of rides, which range from simulators to roller-coasters. Favorite movie and TV-themed rides and sets
+    include The Wizarding World of Harry Potter, The Walking Dead, The Simpsons, Transformers, Jurassic World - The
+    Ride, and Despicable Me Minion Mayhem.
+
+    To save time standing in long lines consider purchasing a Skip the Line: Front of Line Pass at Universal Studios
+    Hollywood. This handy ticket gives you one-time fast entry to each of the park's rides, attractions, and shows, as
+    well as behind-the-scenes access to select attractions.
+
+    When you are tired of the rides, you can check out CityWalk, a three-block entertainment area, with shopping,
+    dining, and theaters. Another option is a guided tour of the studios to explore behind the scenes of some of
+    Universal's most popular movie sets. The VIP Experience allows you opportunities to see the sets and areas not open
+    to the general public.
+
+    Address: 100 Universal City Plaza, Universal City, California </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. Griffith Park and Griffith Observatory</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Griffith Park, in the eastern part of the Santa Monica Mountains, and covering an area of 4,210 acres, is the
+    largest state park in California. It's home to the Los Angeles Zoo, the Griffith Observatory, a planetarium, a Greek
+    theater, a riding center created for the 1984 Olympic Games, golf courses, tennis courts, hiking trails, and other
+    attractions. Walking trails and scenic drives through the mountains offer views over the city and beyond.
+
+    The Griffith Observatory is one of the city's most interesting experience-based attractions, and it's all free to
+    the public. On the grounds are exhibits and telescopes. The main highlight is a look through the Zeiss telescope,
+    used for viewing the moon and planets. You can use the telescopes free each evening the facility is open. Also
+    on-site are solar telescopes used for viewing the sun.
+
+    The park and observatory are named for Griffith J. Griffith, who donated the greater part of the parkland to the
+    city in 1896 and willed funds to the city for the creation of the observatory.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. The Getty Center</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    On a hilltop in the Santa Monica Mountains, the Getty Center, designed by Richard Meier, is a huge complex measuring 0.75 square miles and set on 110 acres. The unique building and the beautiful grounds provide the perfect setting for this impressive museum. Collections include European paintings, drawings, sculpture, and decorative arts, as well as 19th- and 20th-century photography.
+
+    The views from the museum grounds out over Los Angeles are incredible. Book a table at The Restaurant and enjoy a casual lunch while soaking up the scenery.
+    
+    The Getty Center is one of two locations of the J. Paul Getty Museum, created by the late oil magnate, J. Paul Getty. The Getty Villa, set in a recreated Roman country house, deals with art from the Stone Age to the end of the Roman Empire.
+    
+    Address: 1200 Getty Center Drive, Los Angeles, California
+ 
+  </p>
+
+
+
+  <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/losangeles/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>
+
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'Contact' %}">Contact Us</a><br><br>
+    <a href="{% url 'About' %}">AboutUs</a>
+  </footer>
+</body>
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

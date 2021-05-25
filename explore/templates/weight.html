@@ -1,0 +1,99 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+      .cont{
+         background-color: white;
+         margin:0 auto;
+         width: 400px;
+         padding: 40px;
+         border-radius: 10px;
+         box-shadow: 3px 6px 17px rgb(145, 145, 145);
+        
+      }
+      input,select{
+          margin: 0 auto;
+          display: block;
+          width: 200px;
+          padding: 12px;
+          outline: none;
+          border: none;
+          background-color: rgb(241, 241, 241);
+          border-radius: 10px;
+          font-size: medium;
+          font-weight: 600;
+      }
+      .but_1{
+          margin: 0 auto;
+          display: block;
+          width: 150px;
+          height: 40px;
+          background-color: #4285f4;
+          color: white;
+          border: none;
+          outline: none;
+          font-size: medium;
+          border-radius: 6px;
+          font-weight: 600;
+      }
+      .but_1:hover{
+          background: rgb(0, 87, 168);
+          cursor: pointer;
+      }
+      .out{
+          display: block;
+
+      }
+      label{
+          margin-left: 100px;
+          font-weight: 600;
+      }
+
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br>
+<div class="cont">
+    <form action="/explore/weight/" method="POST">
+        {% csrf_token %}
+        <input type="text" required name="values" placeholder="Values of the Items"><br><br>
+        <input type="text" required name="weights" placeholder="Weights of the Items"><br><br>
+        <select required name="classi" id="class">
+            <option value="select">Select Class</option>
+            <option value="FirstClass">First Class</option>
+            <option value="Bussiness">Business</option>
+            <option value="Economy">Economy</option>
+        </select><br><br>
+        <button class="but_1" type="submit">Calculate</button>
+       
+        {% if Knap %}<br>
+        <label for="tot">Total Value</label><br>
+        <input type="text" name ="tot" class="out" readonly value="{{Total}}"><br>
+        <label for="ans">Maximum Value</label><br>
+        <input type="text" name ="ans" class="out" readonly value="{{Knap}}">
+        
+        {% endif %}
+    </form>
+</div><br><br>
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,278 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+
+  <br><br>
+  <h1>Mysore</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/mysore.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/mysore.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/mysore.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About Mysore</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Mysore[14] (/maɪˈsɔːr/ (About this soundlisten)), officially Mysuru ([ˈmaɪ'suːɾu] (About this soundlisten)), is a
+    city in the southern part of the state of Karnataka, India.[15] Mysore city is geographically located between 12°
+    18′ 26″ north latitude and 76° 38′ 59″ east longitude. It is located at an altitude of 770 m (2,530 ft) above mean
+    sea level.
+
+    Mysore is located in the foothills of the Chamundi Hills about 145.2 km (90 mi) towards the southwest of Bangalore
+    and spread across an area of 286.05 km2 (110 sq mi). Mysore City Corporation is responsible for the civic
+    administration of the city, which is also the headquarters of the Mysore district and the Mysore division. In
+    November 2020, A gazetted notification was passed by the state government converting nearby census town of
+    Hootagalli into a City Municipal Council along with four more Town Panchayats of Bhogadi, Kadakola, Rammanahalli and
+    Srirampura, expanding the city area from 155.7 sq.km to 286.05 sq.km.[16][17] This also increased the population of
+    the urban agglomeration from 990,900 to 1,060,120.[16][17][18][19][20][21][22] According to United Nations, Mysuru
+    is projected to have a population of 1.162 million in 2018, making it the second largest city in the state.[23]
+
+    It served as the capital city of the Kingdom of Mysore for nearly six centuries from 1399 until 1956. The Kingdom
+    was ruled by the Wadiyar dynasty, with a brief period of interregnum in the late 18th century when Hyder Ali and
+    Tipu Sultan were in power. The Wadiyars were patrons of art and culture. Tipu Sultan and Hyder Ali also contributed
+    significantly to the cultural and economic growth of the city and the state by planting mulberry trees introducing
+    silk in the region and fighting 4 Anglo-Mysore wars against the British. The cultural ambience and achievements of
+    Mysore earned it the sobriquet Cultural Capital of Karnataka.
+
+    Mysore is noted for its heritage structures and palaces, including the Mysore Palace, and for the festivities that
+    take place during the Dasara festival when the city receives many tourists from around the world. It lends its name
+    to various art forms and culture, such as Mysore Dasara, Mysore painting; the sweet dish Mysore Pak, Mysore Masala
+    Dosa; brands such as Mysore Sandal Soap, Mysore Ink; and styles and cosmetics such as Mysore Peta (a traditional
+    silk turban) and the Mysore silk saris. Mysore is also known for its special variety of jasmine flower fondly
+    referred as "Mysore Mallige" and betel leaves. Tourism is the major industry alongside the traditional industries.
+    Mysore's inter-city public transportation includes rail, bus and flights.[24]</p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Mysore Maharaja Palace (Amba Vilas), Mysore</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    A trip to Mysore cannot be called complete if you don’t visit the famous Maharaja Palace. In fact, the palace should
+    rank top in your itinerary. Situated in the heart of the city, this iconic structure has mesmerized people from all
+    over the world and now boasts of over 6 million annual visitors. This majestic palace used to be the royal residence
+    of the Wodiyar dynasty and is known for its Indo-Saracenic architectural design. Stepping into this palace will make
+    your jaw drop, both literally as well as figuratively. Such is its splendor! From the intricate designs on tall
+    columns to the detailed roof artwork on the ceiling, the palace is a visual treat to the eyes. Plan your itinerary
+    in such a way that you get time to watch the sound and light show in the evening to get a better understanding of
+    the history of Mysore.
+    Or even better, plan your trip during the festival of Dasara which usually falls in the month of September or
+    October. Mysore Dasara or Nada Habba is celebrated in the palace with much fanfare and joviality. The golden throne
+    on which the great rulers of the Kingdom of Mysore sat is kept for display during this festival. You will find the
+    palace packed with men and women dressed in festive wear. Even though you will find yourself lost in a mob of
+    people, watching the procession and the entire festivities during this time of the year is totally worth it. Also,
+    the Amba Vilas is one of the most beautiful places to visit in Mysore at night. You will be amazed by the grandeur
+    of the lit-up palace, giving you a hint of its former glories.
+  </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. Chamundeshwari Temple, Mysore</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    More often than not, places of worship form an integral part of any city’s past and this goes true for the
+    Chamundeshwari Temple in Mysore as well. Located atop Chamundi Hills, this is one of the most famous temples in
+    South India. The temple was constructed by the Wodeyar family as a dedication to their family deity, Goddess Durga.
+    It is built in the Dravidian style and has an ornate seven-tier pyramidal tower at the entrance. There are two ways
+    to reach the temple – by driving up the hill or by climbing up the 1,000 steps. If you take the steps, you will also
+    come across troops of monkeys on either side! Many iconic landmarks in the city such as Mysore Palace, Lalitha Mahal
+    Palace, Krishna Raja Sagar, and St. Philomena’s Church can be spotted from the hills.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. Karanji Lake</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    If you are an avid bird watcher, Karanji Lake Nature Park is where you should visit while you are in Mysore. It is
+    considered a bird paradise that attracts many ornithologists and other nature enthusiasts. You get to meet a lot of
+    sundry bird species like the great and little cormorants, purple and grey herons, egrets, black bises, rose-ringed
+    parakeets, green bee-eaters, painted storks and a variety of butterflies.
+    While it looks like a serene and calm lake now, there is an interesting story attached to the lake park. It was
+    previously Doddakere, a garbage dump which got transformed into an ideal place for the birds to come and hang out.
+    The lake park is situated in the heart of the city. One can get a breathtaking view of the Chamundi hills from the
+    lake park.
+  </p>
+
+
+
+  <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/mysore/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>
+  <button onclick="location.href ='/explore/trains/'" style="display: inline-block;" id="but2">Book a Train</button>
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'Contact' %}">Contact Us</a><br><br>
+    <a href="{% url 'About' %}">AboutUs</a>
+  </footer>
+</body>
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

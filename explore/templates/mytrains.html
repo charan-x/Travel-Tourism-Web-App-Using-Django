@@ -1,0 +1,87 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+    .tckt{
+      background-color: rgb(255, 255, 255);
+      width: 900px;
+      padding: 30px;
+      margin: 0 auto;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 3px 6px 17px rgb(87, 87, 87);
+    }
+    input{
+      outline: none;
+      border: none;
+      width: 300px;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: medium;
+      background-color: rgb(236, 236, 236);
+      font-weight: 600;
+    }
+    .head{
+      margin: 0 auto;
+      text-align: center;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: rgb(0, 31, 134);
+      color: white;
+      width: 900px;
+      padding: 7px;
+    }
+    label{
+      font-size: medium;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+  <h3 style="text-align: center;">Your Train Tickets</h3><br><br>
+  {% for train in Trains reversed %}
+  <div class="head"><h3>Train Ticket</h3></div>
+  <div class="tckt">
+  
+  <label for="from">From</label>
+  <input name="from"type="text" value="{{train.fromd}}" readonly>
+  <label for="to">To</label>
+  <input name="to"type="text" value="{{train.tod}}" readonly><br><br>
+  <label for="tname">Train Name</label>
+  <input name="tname"type="text" value="{{train.trname}}" readonly>
+  <label for="tno">Train Number</label>
+  <input name="tno"type="text" value="{{train.trno}}" readonly><br><br>
+  <label for="pname">Passenger Name</label>
+  <input name="pname"type="text" value="{{train.uname}}" readonly>
+  <label for="date">Date</label>
+  <input name="date"type="Date" value="{{train.date}}" readonly><br><br>
+  <label for="cls">Class</label>
+  <input name="cls"type="text" value="{{train.clas}}" readonly>
+  <label for="pas">Passengers</label>
+  <input name="pas"type="text" value="{{train.passe}}" readonly>
+</div>
+  <br><br><br>
+  {% endfor %}
+  </body>
+</html>
+
+{% endblock %}

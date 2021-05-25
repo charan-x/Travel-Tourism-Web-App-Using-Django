@@ -1,0 +1,260 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/xten.css' %}">
+
+  <title>Grand Travel</title>
+</head>
+
+<body style="background-image: url('/static/Images/xtenbgm.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}">
+        <p>{{request.user}}</p>
+      </a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+  <br><br>
+  <h1>Agra</h1><br><br>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src='/static/Images/agra.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src='/static/Images/agra.jpg' style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src='/static/Images/agra.jpg' style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+  <h2 style="margin-left: 10%;">About Agra</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">Agra is a city offering a discovery of the
+    beautiful era. Agra has a rich history, reflected in its numerous monuments dotted in and around the city. The
+    earliest citation for Agra comes from the mythological era, where the epic Mahabharata refer Agra as ‘Agravana’
+    meaning paradise in Sanskrit. ‘Ptolemy’, the famous second century A.D. geographer, was the first person who
+    referred Agra with its modern name. The Modern Agra was founded by Sikandar Lodi, ruler of Lodi dynasty in 16th
+    century. It was when Shah Jahan descended the Mughal throne that Agra reached the zenith of architectural beauty.
+
+    The city lies in the Western part of Uttar Pradesh on the bank of River Yamuna. Though the wonderful allure of the
+    Taj Mahal attracts people from around the world over to Agra, it is not a standalone attraction. The city offers a
+    trail of fascinating tombs and mausoleums to explore. Acclaimed for its lavish crafts like Pietra Dura (marble
+    inlay) work, rugs and leather goods, and the luscious Petha, Agra equally caters well to shopaholics and foodies.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">Best places to visit</h2><br><br>
+
+  <h2 style="margin-left: 10%;">1. Taj Mahal</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    “The embodiment of all things pure”, said Rudyard Kipling on Taj Mahal’s beauty and that is no wordplay as the Taj
+    is undoubtedly a pure epitome of beauty. It is an immortal poem in white marble and is the finest expression of love
+    of an emperor for his queen. Located on a bank of River Yamuna, it was built by Mughal Emperor Shah Jahan in memory
+    of his beloved wife and Queen Mumtaz Mahal in 1631, who died giving birth to his child and whose last wish to her
+    husband was “to build such a tomb in her memory which the world has never seen before.” It took over 17 years, 22000
+    workers and 1000 elephants to build the wonderful mausoleum.
+
+    The Taj Mahal is one of the three World Heritage Sites in India. Set in a serene Mughal Garden the monument stands
+    on a raised marble platform, with its back towards Yamuna River. The four sides of the Taj Mahal show a perfect
+    symmetry and feature impressive vaulted arches embellished with Pietra Dura scrollwork, and verses from the Quran in
+    calligraphy using inlaid jasper. This architectural masterpiece is one of the most frequented places in India by
+    photographers and foreign tourists. The Taj Mahal looks as immaculate today as when it was first built, leaving the
+    onlookers mesmerized.
+  </p>
+
+
+  <br><br>
+  <h2 style="margin-left: 10%;">2. Agra Fort</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    A massive red-sandstone fort located on the banks of River Yamuna was built under the commission of Emperor Akbar in
+    1565 and was further built by his grandson Shah Jahan. The fort, semi-circular on plan, is surrounded by a 21.4 m
+    high fortification wall. The fort was built primarily as a military structure; parts of it are still reserved under
+    Indian Army. Shah Jahan transformed it into a palace, later it became his gilded prison for eight years after his
+    son Aurangzeb seized power in 1658. The fort houses a maze of buildings, including vast underground sections. The
+    Amar Singh Gate to the south is the sole entry point. A path leads straight from here up to the large Moti Masjid.
+    Just before this is the open Diwan-e-Aam, where Shah Jahan listened to people’s petitions or issues. A small
+    staircase just to the left of Diwan-e-Aam throne leads up to a large courtyard. To the left is a beautiful white
+    marble Nagina Masjid. Other places to see within the Fort are: Diwan-e-Khas - which once housed Shah Jahan’s
+    legendary Peacock throne and the diamond Koh-I-Noor, Shish Mahal- a palace with walls inlaid with tiny mirrors, and
+    Khas Mahal - the white octagonal tower and palace. In the South of the fort, there is a huge red-sandstone
+    Jahangir’s Palace, built by Akbar probably for his son Jahangir.
+  </p>
+
+
+  <br><br>
+
+  <h2 style="margin-left: 10%;">3. Sikandra/Akbar’s Tomb</h2><br><br>
+  <p style=" font-size: larger; margin-left:10%; margin-right: 10%;">
+    Located in the western periphery of the city, the red-sandstone and marble tomb was built by Emperor Akbar, which
+    was later completed by his son Jahangir. Its interior is covered with exquisite calligraphy that reflects the tenets
+    of Din-e-Ilahi, a religious movement started by Emperor Akbar based on the fusion of primarily Hinduism and Islam
+    including other religions as well. Sikandra is the resting place of the Mughal emperor Akbar and his grave lies here
+    in a dark chamber. The outlying garden which is laid out in the Char Bagh style is yet another attraction of the
+    place.
+    <br><br>
+
+
+
+
+    <br><br>
+  <div id="rat">
+    <span class="heading">User Ratings</span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span><br><br>
+    <p>4.1 average based on 254 reviews.</p><br>
+    <hr style="border:1px solid #a3a3a3"><br>
+
+    <div class="row">
+      <div class="side">
+        <div>5 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-5"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>150</div>
+      </div>
+      <div class="side">
+        <div>4 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-4"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>63</div>
+      </div>
+      <div class="side">
+        <div>3 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-3"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>15</div>
+      </div>
+      <div class="side">
+        <div>2 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-2"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>6</div>
+      </div>
+      <div class="side">
+        <div>1 star</div>
+      </div>
+      <div class="middle">
+        <div class="bar-container">
+          <div class="bar-1"></div>
+        </div>
+      </div>
+      <div class="side right">
+        <div>20</div>
+      </div>
+    </div>
+    <br><br>
+    <form action="/xten/agra/" method="POST">
+      {% csrf_token %}
+      <h3>Write your Review here</h2><br><br>
+        <textarea name="review" id="review" placeholder="Wrirte Here"></textarea><br><br><br>
+        <button type="submit" id="srb"> Submit review</button><br>
+    </form>
+  </div>
+
+
+
+  <br><br><br><br>
+  <button onclick="location.href ='/explore/flights/'" id="but">Book a Flight</button>  
+  <button onclick="location.href ='/explore/trains/'"  style="display: inline-block;" id="but2">Book a Train</button>
+  <br><br><br><br>
+
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="{% url 'About' %}">AboutUs</a><br><br>
+    <a href="{% url 'Contact' %}">Contact Us</a>
+  </footer>
+</body>
+
+
+</html>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+{% endblock %}

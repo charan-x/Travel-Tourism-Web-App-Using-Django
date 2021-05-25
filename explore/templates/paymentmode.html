@@ -1,0 +1,90 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+      .cont{
+          background-color: rgb(238, 238, 238);
+          margin: 0 auto;
+          width: 500px;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 3px 6px 18px rgb(102, 102, 102);
+          margin-top: 4%;
+      }
+      h3{
+          text-align: center;
+      }
+      .but_1{
+          margin: 0 auto;
+          display: block;
+          width: 200px;
+          height: 50px;
+          background-color: #4285f4;
+          border: none;
+          outline: none;
+          color: white;
+          border-radius: 8px;
+          font-size: medium;
+      }
+      .but_1:hover{
+          background-color: teal;
+      }
+      .but_2{
+          margin: 0 auto;
+          display: block;
+          width: 200px;
+          height: 50px;
+          background-color: rgb(240, 176, 1);
+          border: none;
+          outline: none;
+          color: white;
+          border-radius: 8px;
+          font-size: medium;
+      }
+      .but_2:hover{
+            background-color: yellowgreen;
+      } 
+      input {
+          border: none;
+          outline: none;
+          padding: 14px;
+          width: 100%;
+          height: 50px;
+          font-size: larger;
+          border-radius: 8px;
+      }
+      label{
+          font-size: larger;
+      }
+  </style>
+</head>
+<nav>
+    <div class="nav-items">
+        <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br><br>
+
+
+<div class="cont">
+
+<h3>Choose your Payment Method</h3>
+
+
+<br><br><br>
+<button class="but_1" onclick="location.href='/explore/payment/'" >DebitCard</button><br><br>
+<button class="but_2" onclick="location.href='/explore/netpay/'" >Net Banking</button>
+</div>
+</html>
+{% endblock %}

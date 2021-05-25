@@ -1,0 +1,193 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <script>
+    function myFunction() {
+      alert("Your booking has been confirmed ,Please continue to the payment page");
+    }
+
+    function TDate1() {
+var UserDate = document.getElementById("depart").value;
+var ToDate = Date.now();
+if (UserDate != ToDate) {
+    alert("The Date must be Bigger or Equal to today's Date")
+    return false;
+}
+return true;}
+
+function TDate2() {
+var UserDatedep = document.getElementById("depart").value;
+var UserDateret = document.getElementById("return").value;
+if (UserDateret < UserDatedep) {
+    alert("The Date must be Bigger than Depart Date")
+    return false;
+}
+return true;}
+
+    </script>
+
+</head>
+
+<body style="background-image: url('/static/Images/bgimg.png');">
+  <nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav>
+
+
+
+  <div id="cont">
+  <form action="/explore/flights/" method="POST">
+    {% csrf_token %}
+    
+      <h3>Flight Booking</h3><br><br>
+      <input name="name" required type="text" id="des" placeholder="Your Name"><br><br>
+      <input name="fdest" required type="text" id="des" placeholder="From Destination"><br><br>
+      <input name="tdest" required type="text" id="des" placeholder="To Destination"><br><br>
+      <label for="depart">Depart</label><br>
+      <input required id="depart" name="depart"  onchange="TDate1()" type="date"><br><br>
+      <label for="return">Return</label><br>
+      <input id="return" name="return"  onchange="TDate2()" type="date"><br><br>
+      <label for="classi">Class</label><br>
+
+      <select required name="classi" id="class">
+        <option value="select">Select</option>
+        <option value="First Class">First Class</option>
+        <option value="Bussiness">Business</option>
+        <option value="Economy">Economy</option>
+
+      </select><br><br>
+      <label for="passe">Passengers</label><br>
+      <input required type="number" min="1" max="4" maxlength="1"  name="passe" id="passe"><br><br>
+      <label for="airline">Choose Airline</label><br>
+
+
+      <select required name="airline" id="airline">
+        <option value="select">Select</option>
+        <option value="Vistara">Vistara</option>
+        <option value="IndiGo">IndiGo</option>
+        <option value="GoAir">GoAir</option>
+        <option value="SpiceJet">SpiceJet</option>
+        <option value="Air India">Air India</option>
+        <option value="AirAsia">AirAsia</option>
+      </select><br><br>
+      <button onclick="alert('To confirm your booking please Proceed to Pay');" type="submit">Book Tickets</button>
+      <br><br>
+   
+  </form>
+  <a href="/explore/suggestions/">Have A Doubt ? , Get Seggestions Here</a><br><br>
+  <a href="/explore/weight/">Calculate Your Luggage Weight</a>
+</div>
+  <br><br>
+  <footer>
+    <p>Copyright © 2021 SDP169<br><br>
+      <a href="#">klu@example.com</a>
+    </p><br>
+    <a href="/explore/aboutus">AboutUs</a><br><br>
+    <a href="/explore/contact">ContactUs</a>
+  </footer>
+
+</body>
+<style>
+  #cont {
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 5px 10px 18px rgb(104, 104, 104);
+
+    width: 900px;
+    padding: 40px;
+    border-radius: 15px;
+  }
+
+  #des {
+    width: 100%;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+    height: 45px;
+    border-style: none;
+    outline: none;
+    font-size: medium;
+    padding: 12px;
+    border-radius: 7px;
+  }
+
+  #return,
+  #depart {
+    width: 400px;
+    height: 45px;
+    font-size: medium;
+    padding: 12px;
+    text-transform: uppercase;
+    border-style: none;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+
+  }
+
+  #class {
+    width: 200px;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+    height: 45px;
+    padding: 12px;
+    font-size: medium;
+    border-style: none;
+    outline-style: none;
+    border-radius: 7px;
+  }
+
+  #airline {
+    width: 200px;
+    font-size: medium;
+    height: 45px;
+    padding: 12px;
+    border-style: none;
+    outline-style: none;
+    border-radius: 7px;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+  }
+
+  #passe {
+    width: 100px;
+    font-size: medium;
+    height: 45px;
+    padding: 12px;
+    border-style: none;
+    outline-style: none;
+    border-radius: 7px;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+  }
+
+  button[type="submit"] {
+    width: 200px;
+    height: 50px;
+    box-shadow: 2px 6px 8px rgb(218, 218, 218);
+    border-style: none;
+    outline: none;
+    font-size: medium;
+    border-radius: 7px;
+    margin: 0 auto;
+    background-color: #4285f4;
+    color: rgb(255, 255, 255);
+  }
+
+  button[type="submit"]:hover {
+    background-color: rgb(0, 207, 10);
+    cursor: pointer;
+  }
+</style>
+
+</html>
+
+{% endblock %}

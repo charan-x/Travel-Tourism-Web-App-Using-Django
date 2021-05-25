@@ -1,0 +1,133 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static '/StyleSheets/main.css' %}">
+  <style>
+        .cont{
+          background-color: rgb(238, 238, 238);
+          margin: 0 auto;
+          width: 500px;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 3px 6px 18px rgb(102, 102, 102);
+      }
+      .but_1{
+
+          display: flexbox;
+          width: 200px;
+          height: 50px;
+          margin-left: 35px;
+          background-color: #4285f4;
+          border: none;
+          outline: none;
+          color: white;
+          border-radius: 8px;
+          font-size: medium;
+      }
+      .but_1:hover{
+          background-color: teal;
+      }
+      .but_2{
+          margin: 0 auto;
+          display: block;
+          width: 200px;
+          height: 50px;
+          background-color: rgb(240, 176, 1);
+          border: none;
+          outline: none;
+          color: white;
+          border-radius: 8px;
+          font-size: medium;
+      }
+      .but_2:hover{
+            background-color: yellowgreen;
+      } 
+      input {
+          border: none;
+          outline: none;
+          padding: 14px;
+          width: 100%;
+          height: 50px;
+          font-size: larger;
+          border-radius: 8px;
+      }
+      label{
+          font-size: larger;
+      }
+      #bank{
+  width: 200px;
+    font-size: medium;
+    height: 50px;
+    padding: 12px;
+    border-style: none;
+    outline-style: none;
+ 
+    display: inline-block;
+    border-radius: 12px;
+    box-shadow: 5px 10px 18px rgb(231, 231, 231);
+}
+
+  </style>
+</head>
+
+
+<body>
+<nav>
+    <div class="nav-items">
+      <h2>Grand Travel </h2><img class="lgi" src="/static/Images/gt.jpg">
+     
+      <span style="flex: 5 auto;"></span>
+      <a href="{% url 'Main' %}">Home</a>
+      <a href="{% url 'Account' %}"><p>{{request.user}}</p></a>
+      <a href="{% url 'Contact' %}">Contact Us</a>
+      <button id="lgb" onclick="location.href = '/logout';">Logout</button>
+    </div>
+  </nav><br>
+
+<div class="cont">
+    <form action="/explore/netpay/" method="POST">
+        {% csrf_token %}
+        <label for="amount">Amount</label><br>
+        {% if Amount %}
+        <input type="text" name="amount" readonly value="{{Amount}}"><br><br>
+        {% else %}
+        <input type="text" name="amount" readonly value="{{Price1}} ₹"><br><br>
+        {% endif %}
+        {% if Name %}
+        <input type="text" name="usr" value="{{Name}}" required placeholder="Net Banking Username"><br><br>
+        {% else %}
+        <input type="text" name="usr" required placeholder="Net Banking Username"><br><br>
+        {% endif %}
+        <input type="password" name="pwd" required placeholder="Net Banking Password"><br><br>
+        {% if Mobile %}
+        <input type="text" name="mob" value="{{Mobile}}" maxlength="10" required placeholder="Mobile Number"><br><br>
+        {% else %}
+        <input type="text" name="mob" maxlength="10"  required placeholder="Mobile Number"><br><br>
+        {% endif %}
+        <select required name="bank" id="bank">
+            <option value="select">Select Bank</option>
+            <option value="SBI">SBI</option>
+            <option value="ICIC">ICIC</option>
+            <option value="Axis">Axis</option>
+            <option value="HDFC">HDFC</option>
+            <option value="Yes">Yes Bank</option>
+            <option value="Kotak Mahindra">Kotak Mahindra</option>
+          </select>
+         
+          <button type="submit" class="but_1">Get OTP</button><br><br>
+        </form>
+
+          <input type="text" name="otp" maxlength="6" required placeholder="Enter OTP"><br><br>
+          <button class="but_2" onclick= "location.href='/explore/myaccount/'; alert('Your Payment Is Successful Continue to My Bookings')" type="submit">Proceed To Pay</button><br>
+    
+</div>
+<br><br>
+  </body>
+</html>
+
+{% endblock %}
